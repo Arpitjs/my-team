@@ -1,0 +1,46 @@
+header.trasparent_nav
+  .wrapper
+    .logo
+      a(href='#')
+        //- img(src='/img/logo.png' alt='Fertile')
+    nav
+      ul
+        li
+          a(href='#') Our Story
+        li
+          a(href='#') Products
+        li
+          a(href='programs') Programs
+        li
+          a(href='#') Contact
+        - if (!user)
+          li(class='side-nav--active')
+            a(href='login') Admin Pannel 
+        if user 
+          li
+            a.c(href='logout') Logout
+
+
+
+// End trasparent_nav
+header.fixed_nav
+  .wrapper
+    .logo
+      a(href='#')
+        //- img(src='/img/logo_small.png' alt='Fertile')
+    nav
+      ul
+        li
+          a(href='#') Our Story
+        li
+          a(href='#') Products
+        li
+          a(href='programs') Programs
+        li
+          a(href='#') Contact
+        - if (!user)
+          li(class='side-nav--active')
+            a(href='login') Admin Pannel 
+        if user 
+          li
+            a.c(href='logout') Logout

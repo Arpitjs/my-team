@@ -1,0 +1,35 @@
+let upload = async (data) => {
+    try {
+        let url = 'http://localhost:4200/updateMe' 
+        let res = await axios({
+            method: 'PATCH',
+            url, data
+        })
+        if (res.data.status === 'success') {
+            console.log('doneeeeee')
+        }
+    } catch (err) {
+        console.log('vaena ni bro')
+    }
+}
+
+if (document.querySelector('.form-user-data')) {
+    document.querySelector('.form-user-data').addEventListener('submit', e => {
+        e.preventDefault()
+        let form = new FormData()
+        form.append('photo', document.querySelector('#photo').files[0])
+        console.log(form)
+        upload(form)
+    })
+}
+
+
+if (document.querySelector('.form-user-data2')) {
+    document.querySelector('.form-user-data2').addEventListener('submit', e => {
+        e.preventDefault()
+        let form = new FormData()
+        form.append('photo', document.querySelector('#photo2').files[0])
+        console.log(form)
+        upload(form)
+    })
+}

@@ -1,0 +1,67 @@
+doctype html
+head
+  title Login V1
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1')
+  // ===============================================================================================
+  link(rel='icon' type='image/png' href='/for login/images/icons/favicon.ico')
+  // ===============================================================================================
+  link(rel='stylesheet' type='text/css' href='/for login/vendor/bootstrap/css/bootstrap.min.css')
+  // ===============================================================================================
+  link(rel='stylesheet' type='text/css' href='/for login/fonts/font-awesome-4.7.0/css/font-awesome.min.css')
+  // ===============================================================================================
+  link(rel='stylesheet' type='text/css' href='/for login/vendor/animate/animate.css')
+  // ===============================================================================================
+  link(rel='stylesheet' type='text/css' href='/for login/vendor/css-hamburgers/hamburgers.min.css')
+  // ===============================================================================================
+  link(rel='stylesheet' type='text/css' href='/for login/vendor/select2/select2.min.css')
+  // ===============================================================================================
+  link(rel='stylesheet' type='text/css' href='/for login/css/util.css')
+  link(rel='stylesheet' type='text/css' href='/for login/css/main.css')
+  // ===============================================================================================
+.limiter
+  .container-login100
+    .wrap-login100
+      .login100-pic.js-tilt(data-tilt='')
+        img(src='/for login/images/img-01.png' alt='IMG')
+      form#myform.login100-form.validate-form
+        span.login100-form-title
+          | Admin Login
+        .wrap-input100.validate-input(data-validate='Valid email is required: ex@abc.xyz')
+          input#email.input100(type='text' name='email' placeholder='Email')
+          span.focus-input100
+          span.symbol-input100
+            i.fa.fa-envelope(aria-hidden='true')
+        .wrap-input100.validate-input(data-validate='Password is required')
+          input#password.input100(type='password' name='pass' placeholder='Password')
+          span.focus-input100
+          span.symbol-input100
+            i.fa.fa-lock(aria-hidden='true')
+        .container-login100-form-btn
+          button.login100-form-btn.arpits Login
+        .text-center.p-t-12
+          span.txt1
+            //- | Forgot
+          a.txt2(href='#')
+            //- | Username / Password?
+        .text-center.p-t-136
+          a.txt2(href='#')
+            //- | Create your Account
+            //- i.fa.fa-long-arrow-right.m-l-5(aria-hidden='true')
+// ===============================================================================================
+//- script(src='/for login/vendor/jquery/jquery-3.2.1.min.js')
+//- // ===============================================================================================
+//- script(src='/for login/vendor/bootstrap/js/popper.js')
+//- script(src='/for login/vendor/bootstrap/js/bootstrap.min.js')
+//- // ===============================================================================================
+//- script(src='/for login/vendor/select2/select2.min.js')
+//- // ===============================================================================================
+//- script(src='/for login/vendor/tilt/tilt.jquery.min.js')
+//- script.
+//-   $('.js-tilt').tilt({
+//-   scale: 1.1
+//-   })
+// ===============================================================================================
+//- script(src='/for login/js/main.js')
+script(src='https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.1/axios.min.js')
+script(src="/js/login.js")

@@ -1,0 +1,10 @@
+.side-nav li {
+    margin: 1rem 0;
+    /* border-left: 0 solid #fff; */
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+  }
+.side-nav--active,
+.side-nav li:hover {
+    border-left: 4px black !important;
+  }
