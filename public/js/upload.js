@@ -34,3 +34,13 @@ if (document.querySelector('.form-user-data2')) {
         upload(form2)
     })
 }
+
+if (document.querySelector('.form-user-data3')) {
+    document.querySelector('.form-user-data3').addEventListener('submit', e => {
+        e.preventDefault()
+        let form3 = new FormData()
+        form3.append('photos3', document.querySelector('#hero').files[0])
+        console.log('till here', form3)
+        upload(form3)
+    })
+}

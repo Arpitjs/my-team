@@ -28,6 +28,25 @@ head
       .form__group.right
         button.btn.btn--small.btn--green Save settings
     .line &nbsp;
+
+     form.form.form-user-data3     
+      .form__group.form__photo-upload3
+        img.form__user-photo(src=`/img/arpit/${user.photos3[0]}`, alt='User photo')
+        - (console.log('user sdjjdlksj',user.photos[0]))
+        input.form__upload(type='file', accept= 'image/*' id="hero" name="hero")
+        label(for='photos3') Choose new photo
+      .form__group.right
+        button.btn.btn--small.btn--green Save settings
+    .line &nbsp;
+
+- if(!user)
+  h1 i am not user !!  
+    form.form.form-user-data      
+      .form__group.form__photo-upload
+        img.form__user-photo(src=`/img/programs/tour-1579867530277-1.jpeg`, alt='User photo')
+    .line &nbsp;
+    
+ 
   //- section.gallery-block.cards-gallery
   //- .container
   //-   .heading

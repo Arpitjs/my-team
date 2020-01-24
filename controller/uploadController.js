@@ -53,7 +53,8 @@ let upload = multer({
 
 exports.uploadPhotos =  upload.fields([
     { name: 'abcd', maxCount: 10 },
-    { name: 'photos', maxCount: 10 }
+    { name: 'photos', maxCount: 10 },
+    {name: 'photos3', maxCount: 10}
 ])
 
 exports.resizePhotos = catchAsync(async (req, res, next) => {
@@ -68,8 +69,20 @@ exports.resizePhotos = catchAsync(async (req, res, next) => {
        .jpeg({ quality: 90 })
        .toFile(`public/img/arpit/${filename}`)
        req.body.abcd.push(filename)
-   })
-   )} else if(req.files.photos) {
+   }) 
+   )} else if(req.files.photos3) {
+    req.body.photos3 = []
+    await Promise.all(req.files.photos3.map(async (file, i) => {
+        let filename = `tour-${Date.now()}-${i + 1}.jpeg`
+        await sharp(file.buffer)
+        .resize(500,500)
+        .toFormat('jpeg')
+        .jpeg({ quality: 90 })
+        .toFile(`public/img/arpit/${filename}`)
+        req.body.photos3.push(filename)
+    }) 
+    )}
+   else if(req.files.photos) {
     // console.log('codee here')
     // } else if(req.body.photos) {
      req.body.photos = []
