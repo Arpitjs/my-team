@@ -9,82 +9,71 @@ head
   link(rel='stylesheet' href='/css/cards-gallery.css')
   if user
     h1 i am the admin
-  form.form.form-user-data      
-    .form__group.form__photo-upload
-      img.form__user-photo(src=`/img/programs/${user.photos[0]}`, alt='User photo')
-      input.form__upload(type='file', accept= 'image/*' id="photo" name="photo" multiple/)
-      label(for='photo') Choose new photo
-    .form__group.right
-      button.btn.btn--small.btn--green Save settings
-  .line &nbsp;
-  form.form.form-user-data2      
-    .form__group.form__photo-upload
-      img.form__user-photo(src=`/img/programs/${user.photos[1]}`, alt='User photo')
-      input.form__upload(type='file', accept= 'image/*' id="photo2" name="photo" multiple/)
-      label(for='photo') Choose new photo
-    .form__group.right
-      button.btn.btn--small.btn--green Save settings
-  .line &nbsp;
-//- section.gallery-block.cards-gallery
-//-   .container
-//-     .heading
-//-       h2 Programs
-//-     .row
-//-       .col-md-6.col-lg-4
-//-         .card.border-0.transform-on-hover
-//-           .form__group.form__photo-upload
-//-             img.form__user-photo(src=`/img/users/${user.photo}`, alt='User photo')
-
-//-           //- a.lightbox(href='../img/image1.jpg')
-//-             //- img.card-img-top(src='/imagesGall/image1.jpg' alt='Card Image')
-//-           .card-body
-//-             input.form__upload(type='file', accept= 'image/*' id="photo" name="photo")
-//-             label(for='photo') Choose new photo
-//-           .form__group.right
-//-             button.btn.btn--small.btn--green Save settings
-//-             h6
-//-               a(href='#') Lorem Ipsum
-//-             p.text-muted.card-text Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quam urna.
-//-       .col-md-6.col-lg-4
-//-         .card.border-0.transform-on-hover
-//-           a.lightbox(href='../img/image2.jpg')
-//-             img.card-img-top(src='/imagesGall/image2.jpg' alt='Card Image')
-//-           .card-body
-//-             h6
-//-               a(href='#') Lorem Ipsum
-//-             p.text-muted.card-text Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quam urna.
-//-       .col-md-6.col-lg-4
-//-         .card.border-0.transform-on-hover
-//-           a.lightbox(href='../img/image3.jpg')
-//-             img.card-img-top(src='/imagesGall/image3.jpg' alt='Card Image')
-//-           .card-body
-//-             h6
-//-               a(href='#') Lorem Ipsum
-//-             p.text-muted.card-text Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quam urna.
-//-       .col-md-6.col-lg-4
-//-         .card.border-0.transform-on-hover
-//-           a.lightbox(href='../img/image4.jpg')
-//-             img.card-img-top(src='/imagesGall/image4.jpg' alt='Card Image')
-//-           .card-body
-//-             h6
-//-               a(href='#') Lorem Ipsum
-//-             p.text-muted.card-text Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quam urna.
-//-       .col-md-6.col-lg-4
-//-         .card.border-0.transform-on-hover
-//-           a.lightbox(href='/imagesGall/image5.jpg')
-//-             img.card-img-top(src='/imagesGall/image5.jpg' alt='Card Image')
-//-           .card-body
-//-             h6
-//-               a(href='#') Lorem Ipsum
-//-             p.text-muted.card-text Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quam urna.
-//-       .col-md-6.col-lg-4
-//-         .card.border-0.transform-on-hover
-//-           a.lightbox(href='/imagesGall/image6.jpg')
-//-             img.card-img-top(src='/imagesGall/image6.jpg' alt='Card Image')
-//-           .card-body
-//-             h6
-//-               a(href='#') Lorem Ipsum
-//-             p.text-muted.card-text Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quam urna.
+    form.form.form-user-data      
+      .form__group.form__photo-upload
+        img.form__user-photo(src=`/img/programs/${user.photos[0]}`, alt='User photo')
+        - (console.log('user sdjjdlksj',user.photos[0]))
+        input.form__upload(type='file', accept= 'image/*' id="photos" name="photos")
+        label(for='photos') Choose new photo
+      .form__group.right
+        button.btn.btn--small.btn--green Save settings
+    .line &nbsp;
+    
+    form.form.form-user-data2      
+      .form__group.form__photo-upload2
+        img.form__user-photo(src=`/img/arpit/${user.abcd[0]}`, alt='User photo')
+        - (console.log('user sdjjdlksj',user.abcd[0]))
+        input.form__upload(type='file', accept= 'image/*' id="ram" name="ram")
+        label(for='abcd') Choose new photo
+      .form__group.right
+        button.btn.btn--small.btn--green Save settings
+    .line &nbsp;
+  //- section.gallery-block.cards-gallery
+  //- .container
+  //-   .heading
+  //-     h2 Programs
+  //-       .row
+  //-     .card-body
+  //- .col-md-6.col-lg-4
+  //-   .card.border-0.transform-on-hover
+  //-     a.lightbox(href='../img/image2.jpg')
+  //-       img.card-img-top(src='/imagesGall/image2.jpg' alt='Card Image')
+  //-     .card-body
+  //-       h6
+  //-         a(href='#') Lorem Ipsum
+  //-       p.text-muted.card-text Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quam urna.
+  //- .col-md-6.col-lg-4
+  //-   .card.border-0.transform-on-hover
+  //-     a.lightbox(href='../img/image3.jpg')
+  //-       img.card-img-top(src='/imagesGall/image3.jpg' alt='Card Image')
+  //-     .card-body
+  //-       h6
+  //-         a(href='#') Lorem Ipsum
+  //-       p.text-muted.card-text Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quam urna.
+  //- .col-md-6.col-lg-4
+  //-   .card.border-0.transform-on-hover
+  //-     a.lightbox(href='../img/image4.jpg')
+  //-       img.card-img-top(src='/imagesGall/image4.jpg' alt='Card Image')
+  //-     .card-body
+  //-       h6
+  //-         a(href='#') Lorem Ipsum
+  //-       p.text-muted.card-text Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quam urna.
+  //- .col-md-6.col-lg-4
+  //-   .card.border-0.transform-on-hover
+  //-     a.lightbox(href='/imagesGall/image5.jpg')
+  //-       img.card-img-top(src='/imagesGall/image5.jpg' alt='Card Image')
+  //-     .card-body
+  //-       h6
+  //-         a(href='#') Lorem Ipsum
+  //-       p.text-muted.card-text Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quam urna.
+  //- .col-md-6.col-lg-4
+  //-   .card.border-0.transform-on-hover
+  //-     a.lightbox(href='/imagesGall/image6.jpg')
+  //-       img.card-img-top(src='/imagesGall/image6.jpg' alt='Card Image')
+  //-     .card-body
+  //-       h6
+  //-         a(href='#') Lorem Ipsum
+  //-       p.text-muted.card-text Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quam urna.
 script(src='https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.js')
 script(src='https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.1/axios.min.js')
 script(src="/js/upload.js")

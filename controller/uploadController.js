@@ -19,8 +19,8 @@ let upload = multer({
     fileFilter: multerFilter
 })
 
-// // multer middlewares
-// exports.uploadUserPhoto = upload.single('photo')
+// multer middlewares
+// exports.uploadPhoto = upload.single('photo')
 
 // exports.resizePhoto = catchAsync(async (req, res, next) => {
 //     if (!req.file) return next()
@@ -36,7 +36,8 @@ let upload = multer({
 // exports.updateMe = catchAsync(async (req, res, next) => {
 //     console.log(req.file)
 //     let filteredBody = {}
-//     if (req.file) filteredBody.photo = req.file.filename
+//     if (req.file)  {
+//         filteredBody.photo = req.file.filename
 //     let updatedUser = await User.findByIdAndUpdate(req.user, filteredBody, {
 //         new: true,
 //         runValidators: true
@@ -45,32 +46,50 @@ let upload = multer({
 //         status: 'success',
 //         data: updatedUser
 //     })
+// }
 // })
 
+
+
 exports.uploadPhotos =  upload.fields([
-    { name: 'imageCover', maxCount: 1 },
+    { name: 'abcd', maxCount: 10 },
     { name: 'photos', maxCount: 10 }
 ])
 
 exports.resizePhotos = catchAsync(async (req, res, next) => {
-    if (!req.files.photos) return next()
+    // if (!req.files.photos || !req.files.abcd) return next()
+    if(req.files.abcd) {
+    req.body.abcd = []
+   await Promise.all(req.files.abcd.map(async (file, i) => {
+       let filename = `tour-${Date.now()}-${i + 1}.jpeg`
+       await sharp(file.buffer)
+       .resize(500,500)
+       .toFormat('jpeg')
+       .jpeg({ quality: 90 })
+       .toFile(`public/img/arpit/${filename}`)
+       req.body.abcd.push(filename)
+   })
+   )} else if(req.files.photos) {
+    // console.log('codee here')
+    // } else if(req.body.photos) {
      req.body.photos = []
+     console.log('req.files>>>', req.files)
     await Promise.all(req.files.photos.map(async (file, i) => {
         let filename = `tour-${Date.now()}-${i + 1}.jpeg`
         await sharp(file.buffer)
-        .resize(2000, 1333)
+        .resize(500,500)
         .toFormat('jpeg')
         .jpeg({ quality: 90 })
         .toFile(`public/img/programs/${filename}`)
         req.body.photos.push(filename)
     })
     )
-    console.log(req.body)
+}
     return next()
 })
 
 exports.updateMe = catchAsync(async (req, res, next) => {
-    console.log(req.body.photos)
+    console.log('req.files>>>', req.files)
     let doc = await User.findByIdAndUpdate(req.user._id, req.body, { runValidators: true, new: true })
     if (!doc) {
         return next(new AppError('No document found with that ID', 404))
@@ -80,3 +99,4 @@ exports.updateMe = catchAsync(async (req, res, next) => {
         data: { doc }
     })
 })
+

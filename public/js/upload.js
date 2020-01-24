@@ -5,11 +5,12 @@ let upload = async (data) => {
             method: 'PATCH',
             url, data
         })
+        console.log('vayo  ni bro')
         if (res.data.status === 'success') {
             console.log('doneeeeee')
         }
     } catch (err) {
-        console.log('vaena ni bro')
+        console.log('vaena ni bro',err)
     }
 }
 
@@ -17,7 +18,7 @@ if (document.querySelector('.form-user-data')) {
     document.querySelector('.form-user-data').addEventListener('submit', e => {
         e.preventDefault()
         let form = new FormData()
-        form.append('photo', document.querySelector('#photo').files[0])
+        form.append('photos', document.querySelector('#photos').files[0])
         console.log(form)
         upload(form)
     })
@@ -27,9 +28,9 @@ if (document.querySelector('.form-user-data')) {
 if (document.querySelector('.form-user-data2')) {
     document.querySelector('.form-user-data2').addEventListener('submit', e => {
         e.preventDefault()
-        let form = new FormData()
-        form.append('photo', document.querySelector('#photo2').files[0])
-        console.log(form)
-        upload(form)
+        let form2 = new FormData()
+        form2.append('abcd', document.querySelector('#ram').files[0])
+        console.log('till here', form2)
+        upload(form2)
     })
 }

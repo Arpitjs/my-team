@@ -80,7 +80,7 @@ exports.isLoggedIn = async(req, res, next) => {
       let user = await userModel.findById(decoded.id)
       if (!user) return next()
       res.locals.user = user
-      console.log('code has entered this block', res.locals.user)
+    //   console.log('code has entered this block', res.locals.user)
      return next()
   } 
   next()

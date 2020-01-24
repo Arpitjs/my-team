@@ -32,13 +32,10 @@ app.use((err, req, res, next) => {
     next(err)
 })
 
-app.use((req, res, next) => {
-    req.requestTime = new Date().toISOString()
-    // console.log(req.cookies)
-    next()
-})
-
 app.all('*', (req, res) => res.status(200).json({msg: 'no such route'}))
 
 let port = 4200
 app.listen(port, () => console.log('success! @', port))
+
+  
+  

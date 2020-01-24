@@ -31,7 +31,6 @@ exports.login = (req, res) => {
     })
 }
 
-exports.upload = (req, res) => {
+exports.programs = (req,res) => {
     res.status(200).render('programs')
 }
-

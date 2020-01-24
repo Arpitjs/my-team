@@ -30,6 +30,9 @@ let userSchema = new mongoose.Schema({
     },
     photos: {
         type: [String]
+    },
+    abcd: {
+        type: [String]
     }
 })
 
