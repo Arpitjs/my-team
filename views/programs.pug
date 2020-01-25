@@ -3,10 +3,10 @@ head
   meta(charset='utf-8')
   meta(http-equiv='X-UA-Compatible' content='IE=edge')
   meta(name='viewport' content='width=device-width, initial-scale=1')
-  title Cards Gallery
+  title Programs
   link(rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css')
   link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.css')
-  link(rel='stylesheet' href='/css/cards-gallery.css')
+  link(rel='stylesheet' href="/css/cards-gallery.css")
   if user
     h1 i am the admin
     form.form.form-user-data      
@@ -37,25 +37,77 @@ head
     .line &nbsp;
 
 - if(!user)
- 
-
   h1 i am not admin !!  
-    form.form.form-user-data      
-      .form__group.form__photo-upload
-        img.form__user-photo(src=`/img/arpit/${prog.photos3[0]}`, alt='User photo')
-    .line &nbsp;
-     form.form.form-user-data      
-      .form__group.form__photo-upload
-        img.form__user-photo(src=`/img/programs/${prog.photos[0]}`, alt='User photo')
-    .line &nbsp;
-     form.form.form-user-data      
-      .form__group.form__photo-upload
-        img.form__user-photo(src=`/img/arpit/${prog.abcd[0]}`, alt='User photo')
-    .line &nbsp;
+    //- form.form.form-user-data      
+    //-   .form__group.form__photo-upload
+    //-     img.form__user-photo(src=`/img/arpit/${prog.photos3[0]}`, alt='User photo')
+    //- .line &nbsp;
+    //-  form.form.form-user-data      
+    //-   .form__group.form__photo-upload
+    //-     img.form__user-photo(src=`/img/programs/${prog.photos[0]}`, alt='User photo')
+    //- .line &nbsp;
+    //-  form.form.form-user-data      
+    //-   .form__group.form__photo-upload
+    //-     img.form__user-photo(src=`/img/arpit/${prog.abcd[0]}`, alt='User photo')
+    //- .line &nbsp;
     
- 
+  section.gallery-block.cards-gallery
+  .container
+    .heading
+      h2 Programs
+    .row
+      .col-md-6.col-lg-4
+        .card.border-0.transform-on-hover
+          a.lightbox(href='../img/image1.jpg')
+            img.card-img-top(src=`/img/arpit/${prog.photos3[0]}` alt='Card Image')
+          .card-body
+            h6
+              a(href='#') Lorem Ipsum
+            p.text-muted.card-text Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quam urna.
+      .col-md-6.col-lg-4
+        .card.border-0.transform-on-hover
+          a.lightbox(href='../img/image2.jpg')
+            img.card-img-top(src=`/img/programs/${prog.photos[0]}` alt='Card Image')
+          .card-body
+            h6
+              a(href='#') Lorem Ipsum
+            p.text-muted.card-text Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quam urna.
+      .col-md-6.col-lg-4
+        .card.border-0.transform-on-hover
+          a.lightbox(href='../img/image3.jpg')
+            img.card-img-top(src=`/img/arpit/${prog.abcd[0]}` alt='Card Image')
+          .card-body
+            h6
+              a(href='#') Lorem Ipsum
+            p.text-muted.card-text Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quam urna.
+      .col-md-6.col-lg-4
+        .card.border-0.transform-on-hover
+          a.lightbox(href='../img/image4.jpg')
+            img.card-img-top(src='/imagesGall/image5.jpg' alt='Card Image')
+          .card-body
+            h6
+              a(href='#') Lorem Ipsum
+            p.text-muted.card-text Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quam urna.
+      .col-md-6.col-lg-4
+        .card.border-0.transform-on-hover
+          a.lightbox(href='/imagesGall/image5.jpg')
+            img.card-img-top(src='/imagesGall/image5.jpg' alt='Card Image')
+          .card-body
+            h6
+              a(href='#') Lorem Ipsum
+            p.text-muted.card-text Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quam urna.
+      .col-md-6.col-lg-4
+        .card.border-0.transform-on-hover
+          a.lightbox(href='/imagesGall/image6.jpg')
+            img.card-img-top(src='/imagesGall/image6.jpg' alt='Card Image')
+          .card-body
+            h6
+              a(href='#') Lorem Ipsum
+            p.text-muted.card-text Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quam urna.
 
-script(src='https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.js')
+
 script(src='https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.1/axios.min.js')
 script(src="/js/upload.js")
-
+script(src='https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.js')
+script.
+  baguetteBox.run('.cards-gallery', { animation: 'slideIn'});

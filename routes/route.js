@@ -14,10 +14,7 @@ router.get('/program/:id', appController.getProgram)
 router.get('/users', authController.protect, authController.restrictTo(), appController.getAllUsers)
 router.post('/signUp', authController.signUp)
 router.post('/login', authController.login)
-router.patch('/updateMe', authController.protect, 
-uploadController.uploadPhotos,
- uploadController.resizePhotos,
-  uploadController.updateMe)
+router.patch('/updateMe', authController.protect, uploadController.updateMe)
 
 router.post('/createTour', authController.protect, programController.createTour)
 router.patch('/updateTour',
