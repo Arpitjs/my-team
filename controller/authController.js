@@ -64,6 +64,11 @@ exports.protect = async (req, res, next) => {
     next()
 }
 
+exports.idIs = (req, res, next) => {
+    req.id = '5e2c795209efc13c5836f526'
+    next()
+}
+
 exports.restrictTo = () => {
     return (req, res, next) => {
         if(req.user.role !== 'admin') return next(new AppError('not allowed', 403))

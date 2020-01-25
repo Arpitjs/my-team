@@ -1,8 +1,9 @@
 let multer = require('multer')
 let sharp = require('sharp')
 let catchAsync = require('../utils/catchAsync')
-let User = require('../userModel')
 let AppError = require('../utils/appError')
+let handlerFactory = require('./handlerFactory')
+let Program = require('../programModel')
 
 let multerStorage = multer.memoryStorage()
 
@@ -69,9 +70,10 @@ exports.resizePhotos = catchAsync(async (req, res, next) => {
     return next()
 })
 
-exports.updateMe = catchAsync(async (req, res, next) => {
-    console.log(req.body)
-    let doc = await User.findByIdAndUpdate(req.user._id, req.body, { runValidators: true, new: true })
+exports.updateProgram = catchAsync(async (req, res, next) => {
+    console.log('req ko body',req.body)
+    let doc = await Program.findByIdAndUpdate(req.id, req.body, { runValidators: true, new: true } )
+    console.log('doc is', doc)
     if (!doc) {
         return next(new AppError('No document found with that ID', 404))
     }
@@ -81,3 +83,5 @@ exports.updateMe = catchAsync(async (req, res, next) => {
     })
 })
 
+exports.createTour = handlerFactory.createOne(Program)
+exports.deleteTour = handlerFactory.deleteOne(Program)

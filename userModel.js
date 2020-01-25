@@ -48,6 +48,12 @@ userSchema.methods.correctPassword = async function(p1, p2) {
     return await bcrypt.compare(p1, p2)
 }
 
+userSchema.virtual('programs', {
+    ref:'program',
+    localField: '_id',
+    foreignField: 'owner'
+})
+
 userModel = mongoose.model('myteam', userSchema)
 
 module.exports = userModel

@@ -1,5 +1,7 @@
 let userModel = require('../userModel')
 let catchAsync = require('../utils/catchAsync')
+let programModel = require('../programModel')
+let AppError = require('../utils/appError')
 
 exports.getOverview = async (req, res, next) => {
     try {
@@ -7,10 +9,6 @@ exports.getOverview = async (req, res, next) => {
     }catch (e) {
         res.status(400).render()
     }
-}
-
-exports.hello = (req, res, next) => {
-   next('fuck you!!!')
 }
 
 // exports.programs = (req, res) => {
@@ -31,6 +29,18 @@ exports.login = (req, res) => {
     })
 }
 
-exports.programs = (req,res) => {
-    res.status(200).render('programs')
-}
+exports.programs = catchAsync(async (req,res, next) => {
+    let prog = await programModel.findOne({slug: req.params.slug })
+    if (!prog) return next(new AppError('there is no program of that name!', 404))
+    res.status(200).render('programs', { prog })
+})
+
+exports.getProgram = catchAsync(async (req, res, next) => {
+    let prog = await programModel.findOne({id: req.params.id})
+    if (!prog) {
+        return next(new AppError('there is no program of that name!', 404))
+    }
+    res.status(200).render('program', {
+        prog
+    })
+})

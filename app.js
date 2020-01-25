@@ -15,8 +15,8 @@ app.use(express.static(path.join(__dirname, 'public')))
 app.use(express.json())
 app.use(cookieParser())
 
-app.use(morgan('dev'))
 app.use('/', routes)
+app.use(morgan('dev'))
 
 let db = "mongodb://localhost:27017/myteam"
 mongoose.connect(db,  {

@@ -1,6 +1,6 @@
 let upload = async (data) => {
     try {
-        let url = 'http://localhost:4200/updateMe' 
+        let url = 'http://localhost:4200/updateTour' 
         let res = await axios({
             method: 'PATCH',
             url, data
