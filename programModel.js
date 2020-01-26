@@ -11,6 +11,12 @@ let programSchema = new mongoose.Schema({
     about: {
         type: String
     },
+    about2: {
+        type: String
+    },
+    about3: {
+        type: String
+    },
     photos: {
         type: [String]
     },

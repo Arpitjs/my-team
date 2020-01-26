@@ -17,7 +17,10 @@ head
           label(for='photos') Choose new photo
           button.btn.btn--small.btn--green Save settings
     .line &nbsp;
-    
+    form.form.form-user-data7 
+      input.form__input(type='textarea', value=`${prog.about3}` id="hello" rows="200" cols="200" class="txtarea")
+      button.btn.btn--small.btn--red Save settings
+
     form.form.form-user-data2      
       .form__group.form__photo-upload2
         img.form__user-photo(src=`/img/arpit/${prog.abcd[0]}`, alt='User photo')
@@ -62,8 +65,10 @@ head
             img.card-img-top(src=`/img/arpit/${prog.photos3[0]}` alt='Card Image')
           .card-body
             h6
-              a(href='#') Lorem Ipsum
-            p.text-muted.card-text Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quam urna.
+              //- a(href='#') Lorem Ipsum
+            p.text-muted.card-text 
+            input.form__input(type='textarea', value=`${prog.about3}`, required, name='email' 
+            readonly  class = "txtarea" oninput='this.style.height = ""; this.style.height = this.scrollHeight + "px"')
       .col-md-6.col-lg-4
         .card.border-0.transform-on-hover
           a.lightbox(href='../img/image2.jpg')
@@ -71,7 +76,7 @@ head
           .card-body
             h6
               a(href='#') Lorem Ipsum
-            p.text-muted.card-text Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quam urna.
+            p.text-muted.card-text 
       .col-md-6.col-lg-4
         .card.border-0.transform-on-hover
           a.lightbox(href='../img/image3.jpg')
@@ -108,6 +113,9 @@ head
 
 script(src='https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.1/axios.min.js')
 script(src="/js/upload.js")
+script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js")
+script(src="/js/textBox.js")
 script(src='https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.js')
 script.
-  baguetteBox.run('.cards-gallery', { animation: 'slideIn'});
+  //- baguetteBox.run('.cards-gallery', { animation: 'slideIn'});
+  //- $('textarea').autoResize();
