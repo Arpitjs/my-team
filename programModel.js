@@ -17,6 +17,9 @@ let programSchema = new mongoose.Schema({
     about3: {
         type: String
     },
+    title1: {
+        type: String
+    },
     photos: {
         type: [String]
     },

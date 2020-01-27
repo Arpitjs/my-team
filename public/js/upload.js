@@ -27,6 +27,7 @@ document.querySelector('.form.form-user-data7').addEventListener('submit', e => 
     e.preventDefault()
     let form = new FormData()
     form.append('about3', document.querySelector('#hello').value)
+    form.append('title1', document.querySelector('#hello2').value)
     // if(!form === null || undefined)
     upload(form)
     // document.querySelector('.text-muted.card-text').textContent = document.querySelector('#hello').value

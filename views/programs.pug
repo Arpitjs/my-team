@@ -18,7 +18,10 @@ head
           button.btn.btn--small.btn--green Save settings
     .line &nbsp;
     form.form.form-user-data7 
-      input.form__input(type='textarea', value=`${prog.about3}` id="hello" rows="200" cols="200" class="txtarea")
+      h1 about
+      input.form__input(type='textarea', value=`${prog.about3}` id="hello" rows="500" cols="500" class="txtarea")
+      h1 title
+      input.form__input(type='textarea', value=`${prog.title1}` id="hello2" rows="200" cols="200" class="txtarea")
       button.btn.btn--small.btn--red Save settings
 
     form.form.form-user-data2      
@@ -40,20 +43,7 @@ head
     .line &nbsp;
 
 - if(!user)
-  h1 i am not admin !!  
-    //- form.form.form-user-data      
-    //-   .form__group.form__photo-upload
-    //-     img.form__user-photo(src=`/img/arpit/${prog.photos3[0]}`, alt='User photo')
-    //- .line &nbsp;
-    //-  form.form.form-user-data      
-    //-   .form__group.form__photo-upload
-    //-     img.form__user-photo(src=`/img/programs/${prog.photos[0]}`, alt='User photo')
-    //- .line &nbsp;
-    //-  form.form.form-user-data      
-    //-   .form__group.form__photo-upload
-    //-     img.form__user-photo(src=`/img/arpit/${prog.abcd[0]}`, alt='User photo')
-    //- .line &nbsp;
-    
+  h1 i am not admin !!      
   section.gallery-block.cards-gallery
   .container
     .heading
@@ -65,10 +55,8 @@ head
             img.card-img-top(src=`/img/arpit/${prog.photos3[0]}` alt='Card Image')
           .card-body
             h6
-              //- a(href='#') Lorem Ipsum
-            p.text-muted.card-text 
-            input.form__input(type='textarea', value=`${prog.about3}`, required, name='email' 
-            readonly  class = "txtarea" oninput='this.style.height = ""; this.style.height = this.scrollHeight + "px"')
+              a(href='#')=prog.title1
+            p.text-muted.card-text= prog.about3
       .col-md-6.col-lg-4
         .card.border-0.transform-on-hover
           a.lightbox(href='../img/image2.jpg')
