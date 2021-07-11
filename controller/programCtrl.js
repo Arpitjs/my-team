@@ -71,8 +71,10 @@ exports.resizePhotos = catchAsync(async (req, res, next) => {
 })
 
 exports.updateProgram = catchAsync(async (req, res, next) => {
-    console.log('req ko body',req.body)
-    let doc = await Program.findByIdAndUpdate(req.id, req.body, { runValidators: true, new: true } )
+    // console.log('req ko body',req.body)
+    let doc = await Program.findByIdAndUpdate(req.id, req.body, 
+    	{ runValidators: true, 
+    	new: true } )
     console.log('doc is', doc)
     if (!doc) {
         return next(new AppError('No document found with that ID', 404))
