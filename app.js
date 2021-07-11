@@ -32,7 +32,7 @@ app.use((err, req, res, next) => {
     next(err)
 })
 
-app.all('*', (req, res) => res.status(200).json({msg: 'no such route'}))
+app.all('*', (req, res) => res.status(404).json({msg: 'no such route'}))
 
 let port = 4200
 app.listen(port, () => console.log('success! @', port))

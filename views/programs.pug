@@ -18,9 +18,8 @@ head
           button.btn.btn--small.btn--green Save settings
     .line &nbsp;
     form.form.form-user-data7 
-      h1 about
+      h1 about title
       input.form__input(type='textarea', value=`${prog.about3}` id="hello" rows="500" cols="500" class="txtarea")
-      h1 title
       input.form__input(type='textarea', value=`${prog.title1}` id="hello2" rows="200" cols="200" class="txtarea")
       button.btn.btn--small.btn--red Save settings
 
@@ -101,9 +100,6 @@ head
 
 script(src='https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.1/axios.min.js')
 script(src="/js/upload.js")
-script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js")
-script(src="/js/textBox.js")
 script(src='https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.js')
 script.
   //- baguetteBox.run('.cards-gallery', { animation: 'slideIn'});
-  //- $('textarea').autoResize();
